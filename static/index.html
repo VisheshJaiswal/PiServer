@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="PiServer - Run python from browser">
+    <meta name="author" content="Vish">
+    <title>PiServer - Run Python from browser</title>
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+<style>
+        body {
+            padding-top: 20px;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            background-color: #f5f5f5;
+        }
+        .text-muted {
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- <div class="jumbotron">
+        <h1>Run your code</h1>
+        <p>This app will allow you to view all the enrolled students and detailed information about them (such as
+            student ID and their first name - more to come). You can also add more students to your list.</p>
+    </div> -->
+    <form role = "form">
+        <div class = "form-group">
+           <label for = "name">GoPiGo</label>
+           <textarea id="textbox" class = "form-control" rows = "25" placeholder = "Paste your code.."></textarea>
+        </div>
+        <div class = "form-group">
+            <button type="button" class="btn btn-success" onclick="execute()">Execute</button>
+         </div>
+         <div class = "form-group">
+                <label for = "name">Result</label>
+                <textarea readonly id="result" class = "form-control" rows = "8"></textarea>
+         </div>
+     </form>
+
+</div>
+<!-- <div><p id="result">asdasdasdasdasd</p></div> -->
+<footer class="footer">
+  <div class="container">
+      <p class="text-muted">Built by GoPigo Team SG</p>
+  </div>
+</footer>
+<script src="axios.min.js"></script>
+<script>
+function execute() {
+    fullcode = document.getElementById("textbox").value
+        axios.post('/exec', {
+    code: fullcode
+  })
+  .then(function (response) {
+    // handle success
+    console.log(response.data.data);
+    document.getElementById("result").value = response.data.data
+  })
+  .catch(function (error) {
+    // handle error
+    document.getElementById("result").value = response.data.data
+  })
+  .finally(function () {
+    // always executed
+  });
+    }
+</script>
+</body>
+</html>
