@@ -18,7 +18,6 @@ def execute():
     f = open("run.py", "w")
     f.write(data['code'])
     f.close()
-    x = None
     try:
         output = subprocess.check_output(
         ["python", "run.py"], stderr=subprocess.STDOUT, shell=True, timeout=30,
@@ -31,4 +30,4 @@ def execute():
     
 
 if __name__ == "__main__":
-    app.run(port=9000, debug='True')
+    app.run(port=80, debug='True')

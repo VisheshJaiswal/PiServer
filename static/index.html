@@ -8,9 +8,10 @@
     <meta name="description" content="PiServer - Run python from browser">
     <meta name="author" content="Vish">
     <title>PiServer - Run Python from browser</title>
-    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
 <style>
         body {
             padding-top: 20px;
@@ -31,14 +32,45 @@
 
 <div class="container">
 
-    <!-- <div class="jumbotron">
-        <h1>Run your code</h1>
-        <p>This app will allow you to view all the enrolled students and detailed information about them (such as
-            student ID and their first name - more to come). You can also add more students to your list.</p>
-    </div> -->
+    <div class="jumbotron">
+            <h1>Nibs</h1>
+        <div class="text-center">
+        <div style="padding-bottom: 0.5em;">
+        <button type="button" class="btn btn-default" >
+            <i class="fa fa-chevron-up fa-3x"></i>
+        </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">
+                <i class="fa fa-chevron-left fa-3x"></i>
+            </button>
+            <button type="button" class="btn btn-default" >
+                <i class="fa fa-stop fa-3x" style="color:red"></i>
+            </button>
+            <button type="button" class="btn btn-default">
+                <i class="fa fa-chevron-right fa-3x"></i>
+            </button>
+          </div>
+        <div style="padding-top: 0.5em;">
+        <button type="button" class="btn btn-default">
+            <i class="fa fa-chevron-down fa-3x"></i>
+        </button>
+        </div>
+    </div>
+    <h2>Shortcuts</h2>
+    <button type="button" class="btn btn-default">
+            <i class="fa fa-exclamation-triangle"> Emergency</i>
+    </button>
+    <button type="button" class="btn btn-default">
+            <i class="fa fa-heartbeat"> Self Test</i>
+    </button>
+    <button type="button" class="btn btn-default">
+            <i class="fa fa-cutlery"> Restuarent</i>
+    </button>
+    </div>
     <form role = "form">
         <div class = "form-group">
-           <label for = "name">GoPiGo</label>
+           <label for = "name">Code Execution</label>
            <textarea id="textbox" class = "form-control" rows = "25" placeholder = "Paste your code.."></textarea>
         </div>
         <div class = "form-group">
@@ -51,10 +83,9 @@
      </form>
 
 </div>
-<!-- <div><p id="result">asdasdasdasdasd</p></div> -->
 <footer class="footer">
   <div class="container">
-      <p class="text-muted">Built by GoPigo Team SG</p>
+      <p class="text-muted">Built by GoPigo Team</p>
   </div>
 </footer>
 <script src="axios.min.js"></script>
